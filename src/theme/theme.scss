@@ -1,0 +1,72 @@
+:root {
+  --gray-scale-200: #dedede;
+  --gray-scale-300: #cccccc;
+  --gray-scale-500: #9A9A9A;
+  --gray-scale-600: #999999;
+  --gray-scale-900: #666666;
+  --gray-scale-c00: #333333;
+  --gray-scale-f00: #2C425D;
+
+  --color-white: white;
+  --color-black: black;
+  --main-color: #0e76f7;
+  --main-text-color: #343434;
+  --active-color: #0E76F8;
+}
+
+html {
+  font-size: 14px;
+}
+
+// 断点位置分别为415px, 640px, 1024px
+$breakpointRange: (415px, 640px, 1200px);
+
+$screen: "only screen";
+$xsmall-only: "#{$screen} and (max-width: #{nth($breakpointRange, 1)})";
+$small-only: "#{$screen} and (max-width: #{nth($breakpointRange, 2)})";
+$medium-up: "#{$screen} and (min-width: #{nth($breakpointRange, 2)})";
+$large-up: "#{$screen} and (min-width: #{nth($breakpointRange, 3)})";
+
+$breakpoints: (
+  'xs': $xsmall-only,
+  'sm': $small-only,
+  'md': $medium-up,
+  'lg': $large-up,
+);
+
+@mixin mq($media) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $media) {
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $media)} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map we create a media with the argument
+  @else {
+    @media #{$media} {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+@mixin flex-column{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+

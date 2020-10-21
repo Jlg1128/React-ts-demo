@@ -1,0 +1,28 @@
+@import '../component/common.scss';
+.layoutContainer{
+  width: 100%;
+  .layoutHead{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding-left: 20%;
+    .lists{
+      width: 100%;
+      height: 100%;
+      @include flex-row;
+      justify-content:space-around;
+      background-color: white;
+      .list{
+        cursor: pointer;
+        @include flex-center;
+      }
+    }
+  }
+
+  .layoutFoot{
+    width: 100%;
+    height: 50px;
+    background-color: saddlebrown;
+  }
+}

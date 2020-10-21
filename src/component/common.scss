@@ -1,0 +1,61 @@
+@import '../theme//theme.scss';
+
+*{
+  scroll-behavior: smooth;
+}
+
+/* px转 rem */
+@function ptr($n) {
+  $rem: 1rem;
+  @return ($n/14) * $rem;
+}
+
+html {
+  font-size: 3.7vw;
+
+
+}
+
+@include mq($medium-up) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: "PingFang SC Regular", "Microsoft YaHei", 微软雅黑, "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #3a3a3a;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.content {
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  @include mq($medium-up) {
+    padding: 0 30px;
+  }
+  @include mq($large-up) {
+    width: 95%;
+    max-width: 1200px;
+  }
+}
+
+  
