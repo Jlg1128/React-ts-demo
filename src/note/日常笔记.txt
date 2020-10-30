@@ -1,0 +1,23 @@
+
+
+var qs = require('querystring')
+var url = require('url')
+var obj = url.parse('http://www.google.com/001?title=搜索')
+console.log(obj);
+console.log(qs.parse(obj.query));
+
+
+url转换path
+
+
+# 使用nrm工具切换淘宝源
+npx nrm use taobao
+
+# 如果之后需要切换回官方源可使用
+npx nrm use npm
+
+
+/Users/wanglu/Library/Android/sdk
+
+
+Mac scss格式化 shift+option + F

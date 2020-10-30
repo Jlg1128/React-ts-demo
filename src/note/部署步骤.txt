@@ -1,0 +1,49 @@
+1.登录
+tcb -login
+
+2.# 部署文件到指定目录
+cloudbase hosting:deploy localPath cloudPath -e envId
+
+# 将 hosting 目录下的所有文件部署到根目录
+cloudbase hosting:deploy hosting -e envId
+
+# 将 static 目录下的 index.js 文件部署到 static/index.js
+cloudbase hosting:deploy ./static/index.js static/index.js -e envId
+
+
+环境id ： mynetease-4ggtoh10e5dafe73
+
+
+
+Screen监视进程，退出ssh进程依然执行 参考：https://help.aliyun.com/knowledge_detail/42523.html?spm=5176.2000002.0.0.616d7b0fuIjmqa
+
+
+1.执行如下命令，创建screen窗口。
+  screen -S [$Name]
+2.执行如下命令，列出screen窗口。
+  screen -ls
+3.当需要运行脚本、执行程序时，在命令前添加screen即可。
+4.然后使用 Ctrl 和 a 键，再按下 d 键，就可以退出SSH登录，但不会影响screen程序的运行。
+5.若需要继续工作时，登录实例，然后执行如下命令，恢复会话即可。
+screen -r -d
+
+//查看端口
+netstat -ntlp
+
+查看防火墙状态： systemctl status firewalld.service
+
+绿的running表示防火墙开启
+
+执行关闭命令： systemctl stop firewalld.service
+
+再次执行查看防火墙命令：systemctl status firewalld.service
+
+执行开机禁用防火墙自启命令  ： systemctl disable firewalld.service
+
+启动：systemctl start firewalld.service
+
+防火墙随系统开启启动  ： systemctl enable firewalld.service
+
+
+[root@VM-0-3-centos sbin]# ./nginx -s reload
+[root@VM-0-3-centos sbin]# ./nginx -t

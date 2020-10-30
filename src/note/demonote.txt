@@ -1,0 +1,48 @@
+
+
+样式管理：npm i classnames
+
+ 工具库loads    meteor npm install --save-dev lodash
+
+  是一个一致性、模块化、高性能的 JavaScript 实用工具库。
+常用数组方法:
+_.chunk 数组分组
+_.map 数组遍历
+_.clone 浅拷贝
+_.cloneDeep 深拷贝
+
+密码验证：meteor add accounts-password
+
+meteor npm install --save bcrypt：加密
+
+meteor remove insecure
+客户端操作数据库
+
+Import classnames from 'classnames'
+className={classnames('button',{size:true})}
+
+    e.preventDefault();阻止默认行为
+
+methods：Meteor.methods({
+  foo(arg1, arg2) {
+    check(arg1, String);
+    check(arg2, [Number]);
+    if (/* you want to throw an error */) {
+      throw new Meteor.Error('pants-not-found', "Can't find my pants");
+    }
+    return 'some return value';
+  },
+  bar() {
+    return 'baz';
+  }
+});
+
+call
+同步const result = Meteor.call('foo', 1, 2);
+
+异步Meteor.call('foo',1,2,(err,result)=>{...})
+
+
+        // const divclass = cx({'red':this.state.age>5})
+
+

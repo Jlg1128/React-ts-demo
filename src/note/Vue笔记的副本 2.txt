@@ -1,0 +1,1 @@
+{"packageUrl":"https://s3mm1.abcpen.com/upload/A77FED48-F984-41c2-99C2-E602B4DB88C2_1599622501089.png","version":"1.2.1","versionCode":189,"packageName":"com.abcpen.meeting","changelog":"测试","sizeInBytes":0}

@@ -1,0 +1,6 @@
+chmod 400 密钥 绝对路径
+
+ssh -i netease.pem root@175.24.120.38
+netease.pem : 密钥绝对路径
+root： username
+175.24.120.38: linux公网地址

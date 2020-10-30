@@ -1,0 +1,42 @@
+
+Mac命令：
+
+快速进入文件夹
+shift+command+g
+
+Command + '+'或'=' 放大页面
+Command + '-' 缩小页面
+
+
+Command + F3 显示桌面
+
+
+meteor 加载文件步奏
+在 /lib 中的文件优先加载
+所有以 main.* 命名的都在其他文件载入后载入
+其他文件以字母顺序载入
+
+判断窗口是否是手机端
+
+import React, { Component } from 'react';
+import * as Bowser from 'bowser';
+
+export default class App extends Component{
+  componentDidMount(){
+    const BROWSER = Bowser.getParser(window.navigator.userAgent);
+    const isMobile = BROWSER.getPlatformType() === 'mobile';
+    console.log(isMobile)
+  }
+  render(){
+    return (
+      <div>
+        123
+      </div>
+    )
+  }
+}
+
+   控制台打印带颜色信息
+    console.log("%c%s",
+            "color: red; background: yellow; font-size: 24px;",
+            is_mobi);

@@ -1,0 +1,36 @@
+      
+
+
+     
+     排序
+      var result = Counter.find({name:"hf"},{sort:{age:-1},limit:5,skip:2}).fetch()
+    
+   查找一条，直接加入参数    var result =Counter.findOne('jha5gX82EGrfwDpxo')
+       
+    或者
+     var result =Counter.find({$or:[{name:'jjj'},{name:'jlg'}]}).fetch()	
+     
+     Fields: 筛选字段
+      var result =Counter.find({age:{$gt:2}},{sort:{age:1},fields:{'age':true}}).fetch()
+   
+    过滤
+    Tasks.find(filter, { sort: { createdAt: -1 } }
+
+    大于：$gt
+    小于：$lt
+    大于等于： $gte
+   小于等于： $lte
+
+{ fruit: { $in: ['peach', 'plum', 'pear'] } }
+
+
+
+
+     AnswerSheet.update({_id:"N6PiBmxe94vwDqCWf"},    {$pull: {
+        questions: {
+          id:{$in:['1zae816mh9k']} 
+        },
+      }},)
+
+
+  UserAnswers.update(selector, modifier, { multi: true });
