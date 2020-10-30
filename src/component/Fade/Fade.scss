@@ -1,0 +1,44 @@
+.fadeWrapper {
+  position: relative;
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+  &.up{
+    transform: translateY(40px);
+  }
+  &.right{
+    transition-duration: 1.5s;
+    transform: translateX(-40px);
+  }
+  &.left{
+    transition-duration: 1.5s;
+    transform: translateX(40px);
+  }
+
+  &.down{
+    transform: translateY(-40px);
+  }
+
+  &.up-micro{
+    transition-duration: 1s;
+    transform: translateY(10px);
+  }
+  
+  &.right-slow{
+    transition: all 1.5s ease-in-out;
+    transform: translateX(-120px); 
+  }
+  &.delay200{
+    transition-delay: 0.3s;
+  }
+  &.delay400{
+    transition-delay: 0.6s;
+  }
+  &.delay600{
+    transition-delay: 0.9s;
+  }
+
+  &.fade-move {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

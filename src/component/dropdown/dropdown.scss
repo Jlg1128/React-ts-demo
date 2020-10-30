@@ -1,0 +1,96 @@
+@import "/imports/ui/stylesheets/variables/palette";
+@import "/imports/ui/stylesheets/variables/general";
+@import '/imports/ui/stylesheets/mixins/_scrollable';
+
+.dropdownWrapper {
+  position: relative;
+
+  .trigger {
+    cursor: pointer;
+  }
+
+  .list {
+    z-index: 999;
+    position: fixed;
+    @include flex-column;
+    align-items: stretch;
+    background:rgba(42,43,43,1);
+    border:1px solid rgba(51,51,51,1);
+    border-radius:4px;
+    padding: 7px 0;
+
+    .cursor {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: rgba(42,43,43,1);
+      border-top:1px solid #333;
+      border-left:1px solid #333;
+
+    }
+
+    &.bottom {
+      top: 24px;
+
+      .cursor {
+        top: -2px;
+        left: 50%;
+        transform: rotate(45deg) translateX(-50%);
+      }
+    }
+
+    &.bottom_left {
+      top: 24px;
+      left: 0;
+
+      .cursor {
+        top: -7px;
+        left: 16px;
+        transform: rotate(45deg) ;
+      }
+    }
+
+    &.bottom_right {
+      top: 24px;
+      right: 0;
+
+      .cursor {
+        top: -7px;
+        right: 16px;
+        transform: rotate(45deg) ;
+      }
+    }
+
+    .listItem {
+      @include flex-row;
+      min-width: 88px;
+      transition: 200ms ease-out;
+
+      .label {
+        font-size:12px;
+        font-weight:400;
+        color: #fff;
+        @include flex-row;
+        height: 24px;
+      }
+
+      &:hover{
+        background: $--color-primary;
+
+        span {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    //background: rgba(255,0,0,0.2);
+    z-index: 1;
+  }
+}

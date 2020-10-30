@@ -1,29 +1,22 @@
+import React, { PureComponent } from 'react';
 
-import React, { Component } from 'react'
-
-type Props = {
-
-}
-type State = {
-
-}
-class App extends Component<Props, State>{
-    state = {
-        count: 0
-    }
-    handleClick = () => {
-        const { count } = this.state
-        this.setState({
-            count: count+1
-        },() => console.log(this.state.count))
-    }
-    render() {
-        return (
-            <div>
-                <button onClick = { () => console.log(this) }>点击</button>
-            </div>
-        )
-    }
+interface UserName {
+  age: number;
+  sex: 'man' | 'woman';
 }
 
-export default App
+function get<T extends UserName>(number: T): T {
+  return number;
+}
+get({ age: 17, sex: 'man' });
+ class App extends PureComponent {
+  render() {
+    return (
+      <div>
+        123
+      </div>
+    );
+  }
+}
+
+export default App;
